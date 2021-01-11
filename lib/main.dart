@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(
     MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.greenAccent,
         appBar: AppBar(
@@ -28,8 +29,7 @@ class _MagicBallxState extends State<MagicBallx> {
   int ballnumber = 1;
     void ballchange() {
       setState(() {
-        ballnumber = Random().nextInt(6) + 1;
-        print(ballnumber);
+        ballnumber = Random().nextInt(5) + 1;
       });
     }
   @override
