@@ -25,15 +25,15 @@ class MagicBallx extends StatefulWidget {
 }
 
 class _MagicBallxState extends State<MagicBallx> {
-  @override
-  Widget build(BuildContext context) {
-    int ballnumber = 1;
+  int ballnumber = 1;
     void ballchange() {
       setState(() {
-      ballnumber = Random().nextInt(6) + 1;
+        ballnumber = Random().nextInt(6) + 1;
+        print(ballnumber);
       });
     }
-
+  @override
+  Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
