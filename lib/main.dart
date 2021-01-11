@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +11,7 @@ void main() {
           title: Text('Ask Me any Question'),
           backgroundColor: Colors.blue,
         ),
+        body: MagicBallx(),
       ),
     ),
   );
@@ -24,15 +27,25 @@ class MagicBallx extends StatefulWidget {
 class _MagicBallxState extends State<MagicBallx> {
   @override
   Widget build(BuildContext context) {
+    int ballnumber = 1;
+    void ballchange() {
+      setState(() {
+      ballnumber = Random().nextInt(6) + 1;
+      });
+    }
+
     return Container(
-       child: Column(children: [
-         Expanded(child: FlatButton(
-           onPressed: () {
-             
-           },
-           child: ,
-         ))
-       ],),
+      child: Column(
+        children: [
+          Expanded(
+              child: FlatButton(
+            onPressed: () {
+              ballchange();
+            },
+            child: Image.asset('images/ball$ballnumber.png'),
+          ))
+        ],
+      ),
     );
   }
 }
